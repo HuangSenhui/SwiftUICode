@@ -9,37 +9,117 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isShowCard = false
+    @State var viewState = CGSize.zero
+    @State var isShowBottomCard = false
+    @State var bottomState = CGSize.zero
+    @State var isShowFull = false
+    
     var body: some View {
         ZStack {
             
             TitleView()
-                .blur(radius: 20)
+                .blur(radius: isShowCard ? 20 : 0)
+                .opacity(isShowBottomCard ? 0.4 : 1)
+                .offset(y: isShowBottomCard ? -200 : 0)
+                .animation(
+                    Animation
+                        .default
+                        .delay(0.1)
+                        .speed(2)   // 速度、重复
+            )
             
             BackCardView()
+                .frame(width: isShowBottomCard ? 300 : 340, height: 220)
                 .background(Color.red)
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(x: 0, y: -40)
-                .scaleEffect(0.9)
-                .rotationEffect(Angle(degrees: 10))  // 旋转
-                .rotation3DEffect(Angle(degrees: 10), axis: (x: 10.0, y: 0.0, z: 0.0))  // 3D
+                .offset(x: 0, y: isShowCard ? -400 : -40)
+                .offset(x: viewState.width, y: viewState.height)
+                .offset(y: isShowBottomCard ? -180 : 0)
+                .scaleEffect(isShowBottomCard ? 1 : 0.9)
+                .rotationEffect(Angle(degrees: isShowCard ? 0 : 10))  // 旋转
+                .rotationEffect(Angle(degrees: isShowBottomCard ? -10 : 0))
+                .rotation3DEffect(Angle(degrees: isShowBottomCard ? 0 : 10), axis: (x: 10.0, y: 0.0, z: 0.0))  // 3D
                 .blendMode(.hardLight)
+                .animation(.easeIn(duration: 0.5))
 
             BackCardView()
+                .frame(width: 340, height: 220)
                 .background(Color.blue)
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(x: 0, y: -20)
-                .scaleEffect(0.95)
-                .rotationEffect(Angle(degrees: 5))
-                .rotation3DEffect(Angle(degrees: 5), axis: (x: 10.0, y: 0.0, z: 0.0))
+                .offset(x: 0, y: isShowCard ? -200 : -20)
+                .offset(x: viewState.width, y: viewState.height)
+                .offset(y: isShowBottomCard ? -140 : 0)
+                .scaleEffect(isShowBottomCard ? 1 : 0.95)
+                .rotationEffect(Angle(degrees: isShowCard ? 0 : 5))
+                .rotationEffect(Angle(degrees: isShowBottomCard ? -5 : 0))
+                .rotation3DEffect(Angle(degrees: isShowBottomCard ? 0 : 5), axis: (x: 10.0, y: 0.0, z: 0.0))
                 .blendMode(.hardLight)
+                .animation(.easeIn(duration: 0.3))
 
             CardView()
+                .frame(width: isShowBottomCard ? 375 : 340, height: 220)
+                .background(Color.black)
+//                .cornerRadius(20)
+                .clipShape(RoundedRectangle(cornerRadius: isShowBottomCard ? 30 : 20, style: .continuous))
+                .shadow(radius: 20)
+                .offset(x: viewState.width, y: viewState.height)
+                .offset(y: isShowBottomCard ? -100 : 0)
                 .blendMode(.hardLight)
+                .animation(.spring(
+                    response: 0.1,
+                    dampingFraction: 0.6,
+                    blendDuration: 0))
+                .onTapGesture {
+                    self.isShowBottomCard.toggle()
+            }
+            .gesture(
+                DragGesture().onChanged { value in
+                    self.viewState = value.translation
+                    self.isShowCard = true
+                }
+                .onEnded { value in
+                    self.viewState = .zero
+                    self.isShowCard = false
+                }
+            )
+            // 显示拖拽偏移数据
+            Text("\(bottomState.height)").offset(y:-300)
             
             BottomCardView()
-                .blur(radius: 20)
+                .offset(x:0, y: isShowBottomCard ? 360 : 1000)
+                .offset(y: bottomState.height)
+                .blur(radius: isShowCard ? 20 : 0)
+                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))   // 时间曲线
+                .gesture(
+                    // 分段滑动
+                    DragGesture().onChanged { value in
+                        self.bottomState = value.translation
+                        if self.isShowFull {
+                            self.bottomState.height += -300
+                        }
+                        if self.bottomState.height < -300 {
+                            self.bottomState.height = -300  // 处理视图边框
+                        }
+                    }
+                    .onEnded { value in
+                        if self.bottomState.height > 50 {
+                            self.isShowBottomCard = false
+                        }
+                        if (self.bottomState.height < -100 && !self.isShowFull) ||
+                        (self.bottomState.height < -250 && self.isShowFull) {
+                            self.bottomState.height = -300
+                            self.isShowFull = true
+                        } else {
+                            self.bottomState = .zero
+                            self.isShowFull = false
+                        }
+                        
+                    }
+            )
         }
     }
 }
@@ -77,10 +157,7 @@ struct CardView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 130, alignment: .top)
         }
-        .frame(width: 340, height: 220)
-        .background(Color.black)
-        .cornerRadius(20)
-        .shadow(radius: 20)
+        
     }
 }
 
@@ -89,8 +166,7 @@ struct BackCardView: View {
         VStack {
             Spacer()
         }
-        .frame(width: 340, height: 220)
-        
+
     }
 }
 
@@ -135,6 +211,5 @@ struct BottomCardView: View {
             .background(Color.white)
             .cornerRadius(30)
             .shadow(radius: 20)
-            .offset(x:0, y: 500)
     }
 }
