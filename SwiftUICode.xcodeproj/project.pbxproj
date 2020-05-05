@@ -20,6 +20,8 @@
 		8B38CA5C2461419700548A61 /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA5B2461419700548A61 /* UpdateDetail.swift */; };
 		8B38CA5E2461452500548A61 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA5D2461452500548A61 /* UpdateStore.swift */; };
 		8B38CA6024614A5A00548A61 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA5F24614A5A00548A61 /* MainTabBar.swift */; };
+		8B38CA622461507E00548A61 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA612461507E00548A61 /* RingView.swift */; };
+		8B38CA6424615C9700548A61 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA6324615C9700548A61 /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		8B38CA5B2461419700548A61 /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		8B38CA5D2461452500548A61 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		8B38CA5F24614A5A00548A61 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		8B38CA612461507E00548A61 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		8B38CA6324615C9700548A61 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				8B38CA5B2461419700548A61 /* UpdateDetail.swift */,
 				8B38CA5D2461452500548A61 /* UpdateStore.swift */,
 				8B38CA5F24614A5A00548A61 /* MainTabBar.swift */,
+				8B38CA612461507E00548A61 /* RingView.swift */,
+				8B38CA6324615C9700548A61 /* Modifiers.swift */,
 				8B38CA44246065C000548A61 /* Assets.xcassets */,
 				8B38CA49246065C000548A61 /* LaunchScreen.storyboard */,
 				8B38CA4C246065C000548A61 /* Info.plist */,
@@ -173,7 +179,9 @@
 				8B38CA5E2461452500548A61 /* UpdateStore.swift in Sources */,
 				8B38CA5A24613DB100548A61 /* UpdateList.swift in Sources */,
 				8B38CA542460EC6C00548A61 /* MenuView.swift in Sources */,
+				8B38CA6424615C9700548A61 /* Modifiers.swift in Sources */,
 				8B38CA5C2461419700548A61 /* UpdateDetail.swift in Sources */,
+				8B38CA622461507E00548A61 /* RingView.swift in Sources */,
 				8B38CA562460F6EF00548A61 /* Home.swift in Sources */,
 				8B38CA58246102C900548A61 /* HomeView.swift in Sources */,
 				8B38CA41246065BD00548A61 /* SceneDelegate.swift in Sources */,

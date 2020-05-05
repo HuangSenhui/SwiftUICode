@@ -83,8 +83,8 @@ struct Update: Identifiable {
 
 let updateData = [
     Update(image: "swiftui_logo", title: "SwiftUI 1", text: "SwiftUI in action,SwiftUI in action,SwiftUI in action,SwiftUI in action,SwiftUI in action,SwiftUI in action,SwiftUI in action.", date: "May 5"),
-    Update(image: "post_1", title: "SwiftUI 2", text: "SwiftUI in action", date: "May 5"),
+    Update(image: "huoying_post1", title: "SwiftUI 2", text: "SwiftUI in action", date: "May 5"),
     Update(image: "swiftui_logo", title: "SwiftUI 3", text: "SwiftUI in action", date: "May 5"),
-    Update(image: "post_1", title: "SwiftUI 4", text: "SwiftUI in action", date: "May 5"),
+    Update(image: "huoying_post1", title: "SwiftUI 4", text: "SwiftUI in action", date: "May 5"),
     Update(image: "swiftui_logo", title: "SwiftUI 5", text: "SwiftUI in action", date: "May 5"),
 ]

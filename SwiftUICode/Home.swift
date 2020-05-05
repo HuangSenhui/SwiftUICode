@@ -12,6 +12,7 @@ struct Home: View {
     
     @State var isShowProfile = false
     @State var viewState = CGSize.zero
+    @State var isShowContentView = false
     
     var body: some View {
         // 使用ZStack,将不同试图层叠组合，方便后续动画
@@ -19,9 +20,16 @@ struct Home: View {
             Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
                 .edgesIgnoringSafeArea(.all)
             
-            HomeView(isShowProfile: $isShowProfile)
+            HomeView(isShowProfile: $isShowProfile, isShowContentView: $isShowContentView)
                 .padding(.top, 44)
-                .background(Color.white)
+                .background(
+                    VStack {
+                        LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)), Color.white]), startPoint: .top, endPoint: .bottom)
+                            .frame(height: 200)
+                        Spacer()
+                    }
+                    .background(Color.white)
+                )
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
                 .offset(y: isShowProfile ? -450 : 0)
@@ -55,6 +63,31 @@ struct Home: View {
                     self.viewState.height = .zero
                 }
             )
+            
+            // contentView
+            if isShowContentView {
+                Color.white.edgesIgnoringSafeArea(.all) // 消除背景
+                ContentView()
+                
+                HStack {
+                    Spacer()
+                    VStack {
+                        Image(systemName: "xmark")
+                            .frame(width: 36, height: 36)
+                            .foregroundColor(.white)
+                            .background(Color.black)
+                            .clipShape(Circle())
+                        
+                        Spacer()
+                    }
+                }
+                .offset(x: -16, y: 16)
+                .transition(.move(edge: .top))
+                .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0))
+                .onTapGesture {
+                    self.isShowContentView = false
+                }
+            }
             
         }
     }

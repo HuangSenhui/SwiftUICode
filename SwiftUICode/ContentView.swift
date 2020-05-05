@@ -89,7 +89,7 @@ struct ContentView: View {
             // 显示拖拽偏移数据
 //            Text("\(bottomState.height)").offset(y:-300)
             
-            BottomCardView()
+            BottomCardView(isShow: $isShowBottomCard)
                 .offset(x:0, y: isShowBottomCard ? 360 : 1000)
                 .offset(y: bottomState.height)
                 .blur(radius: isShowCard ? 20 : 0)
@@ -155,7 +155,7 @@ struct CardView: View {
             .padding(.horizontal, 20)
             .padding(.top, 20)
             Spacer()
-            Image("post_1")
+            Image("huoying_post1")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 130, alignment: .top)
@@ -184,7 +184,7 @@ struct TitleView: View {
                 }
                 Spacer()
             }
-            Image("post_1")
+            Image("huoying_post1")
                 .resizable()
                 .frame(width: 370, height: 200)
             
@@ -194,6 +194,8 @@ struct TitleView: View {
 }
 
 struct BottomCardView: View {
+    @Binding var isShow: Bool
+    
     var body: some View {
         VStack(spacing: 20.0) {
             Rectangle()
@@ -205,6 +207,32 @@ struct BottomCardView: View {
                 .multilineTextAlignment(.center)
                 .lineSpacing(4)
                 .font(.subheadline)
+            
+            HStack(spacing: 20.0) {
+                RingView(color1: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),
+                         color2: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1),
+                         width: 88,
+                         height: 88,
+                         percent: 80,
+                         isShow: $isShow)
+                    .animation(Animation.easeInOut.delay(0.3))
+                
+                VStack(alignment: .leading, spacing: 8.0) {
+                    Text("SwiftUI")
+                        .fontWeight(.bold)
+                    Text("SwiftUI 修炼进度：布局、动画、数据流...")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                        .lineSpacing(4)
+                    
+                }
+                .padding(20)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
+            }
+            
+            
             Spacer()
             
         }
