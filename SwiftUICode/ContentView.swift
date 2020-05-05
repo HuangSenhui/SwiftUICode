@@ -87,7 +87,7 @@ struct ContentView: View {
                 }
             )
             // 显示拖拽偏移数据
-            Text("\(bottomState.height)").offset(y:-300)
+//            Text("\(bottomState.height)").offset(y:-300)
             
             BottomCardView()
                 .offset(x:0, y: isShowBottomCard ? 360 : 1000)
