@@ -124,11 +124,14 @@ struct ContentView: View {
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
+// 将模块导出，将需要做动画的modifier放到主View
 
 struct CardView: View {
     var body: some View {
