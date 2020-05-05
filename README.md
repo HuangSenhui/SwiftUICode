@@ -8,3 +8,4 @@
 4. Binding、ScrollView、3D转换动画（GeometryReader）
 5. NavigationView、 Combine、Edit Data、TabBar
 6. 环形进度条、自定义`Modifier`、使用自定义字体
+7. 首页转场交互动画、传值、手势

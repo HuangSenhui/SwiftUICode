@@ -22,6 +22,8 @@
 		8B38CA6024614A5A00548A61 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA5F24614A5A00548A61 /* MainTabBar.swift */; };
 		8B38CA622461507E00548A61 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA612461507E00548A61 /* RingView.swift */; };
 		8B38CA6424615C9700548A61 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA6324615C9700548A61 /* Modifiers.swift */; };
+		8B38CA66246169C900548A61 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA65246169C900548A61 /* CourseList.swift */; };
+		8B38CA682461A62100548A61 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA672461A62100548A61 /* CourseDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		8B38CA5F24614A5A00548A61 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		8B38CA612461507E00548A61 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		8B38CA6324615C9700548A61 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		8B38CA65246169C900548A61 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
+		8B38CA672461A62100548A61 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				8B38CA532460EC6C00548A61 /* MenuView.swift */,
 				8B38CA552460F6EF00548A61 /* Home.swift */,
 				8B38CA57246102C900548A61 /* HomeView.swift */,
+				8B38CA65246169C900548A61 /* CourseList.swift */,
+				8B38CA672461A62100548A61 /* CourseDetail.swift */,
 				8B38CA5924613DB100548A61 /* UpdateList.swift */,
 				8B38CA5B2461419700548A61 /* UpdateDetail.swift */,
 				8B38CA5D2461452500548A61 /* UpdateStore.swift */,
@@ -186,7 +192,9 @@
 				8B38CA58246102C900548A61 /* HomeView.swift in Sources */,
 				8B38CA41246065BD00548A61 /* SceneDelegate.swift in Sources */,
 				8B38CA6024614A5A00548A61 /* MainTabBar.swift in Sources */,
+				8B38CA682461A62100548A61 /* CourseDetail.swift in Sources */,
 				8B38CA43246065BD00548A61 /* ContentView.swift in Sources */,
+				8B38CA66246169C900548A61 /* CourseList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
