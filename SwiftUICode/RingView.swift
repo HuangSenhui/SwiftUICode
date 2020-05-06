@@ -25,6 +25,7 @@ struct RingView: View {
             Circle()
                 .stroke(Color.black.opacity(0.1), style: StrokeStyle(lineWidth: 5 * multiplier))
                 .frame(width: width, height: height)
+            
             Circle()
                 .trim(from: isShow ? progrees : 1, to: 1) // 0.2  -> 80%
                 .stroke(

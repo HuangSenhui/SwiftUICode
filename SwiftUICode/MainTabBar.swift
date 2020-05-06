@@ -16,6 +16,11 @@ struct MainTabBar: View {
                     Image(systemName: "star")
                     Text("Home")
             }
+            CourseList()
+                .tabItem {
+                    Image(systemName: "book")
+                    Text("章节")
+            }
             ContentView()
                 .tabItem {
                     Image(systemName: "photo")

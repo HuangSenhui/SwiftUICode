@@ -78,6 +78,9 @@ struct ContentView: View {
             }
             .gesture(
                 DragGesture().onChanged { value in
+                    if value.translation.height > 10 {
+                        self.isShowBottomCard = false
+                    }
                     self.viewState = value.translation
                     self.isShowCard = true
                 }

@@ -43,19 +43,20 @@ struct CourseList: View {
                                 .offset(y: self.courses[index].isShow ? -geomety.frame(in: .global).minY : 0)
                                 .opacity(self.activeIndex != index && self.isActive ? 0 : 1)
                                 .scaleEffect(self.activeIndex != index && self.isActive ? 0.5 : 1)
-                            //                                .offset(x: self.activeIndex != index && self.isActive ? MAINSCREEN.width : 0)
+//                                .offset(x: self.activeIndex != index && self.isActive ? MAINSCREEN.width : 0) // 侧边移动动画
                         }
                         .frame(height: 200)
                         .frame(maxWidth: self.courses[index].isShow ? .infinity : MAINSCREEN.width - 60)
                         .frame(maxWidth: .infinity)
-                            .zIndex(self.courses[index].isShow ? 1 : 0) // 提升显示层级
+                        .zIndex(self.courses[index].isShow ? 1 : 0) // 提升显示层级
+                        
                     }
                 }
                 .frame(width: MAINSCREEN.width)
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             }
-                .statusBar(hidden: isActive)    // 状态栏
-                .animation(.linear)
+            .statusBar(hidden: isActive)    // 状态栏
+            .animation(.linear)
         }
     }
 }

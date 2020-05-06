@@ -25,7 +25,7 @@ struct UpdateList: View {
                         HStack {
                             Image(item.image)
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fill)
                                 .frame(width: 80, height: 80)
                                 .background(Color.black)
                                 .cornerRadius(30)
@@ -55,11 +55,11 @@ struct UpdateList: View {
                     self.store.updates.move(fromOffsets: source, toOffset: destination)
                 }
             }
-            .navigationBarTitle(Text("更新通知"))
+            .navigationBarTitle(Text("更新课程"))
             .navigationBarItems(leading: Button(action: {
                 self.addUpdate()
             }) {
-                Text("添加通知")
+                Text("添加课程")
             }, trailing: EditButton())
             
         }
@@ -73,7 +73,7 @@ struct UpdateList_Previews: PreviewProvider {
 }
 
 struct Update: Identifiable {
-    var id = UUID()
+    let id = UUID()
     var image: String
     var title: String
     var text: String
