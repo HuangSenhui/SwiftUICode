@@ -9,17 +9,20 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    var progress = 60
+    
     var body: some View {
         VStack {
             Spacer()
             
             VStack {
-                Text("进度条：完成 30%")
+                Text("进度条：完成 \(progress)%")
                     .font(.caption)
                 
                 // Color 也是一个View
                 Color.white
-                    .frame(width: 38, height: 6)
+                    .frame(width: CGFloat(Double(progress) * 1.3), height: 6)
                     .cornerRadius(3)    // 进度指示器
                     .frame(width: 130, height: 6, alignment: .leading)
                     .background(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.08))

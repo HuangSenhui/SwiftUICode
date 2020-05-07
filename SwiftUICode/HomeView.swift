@@ -44,7 +44,7 @@ struct HomeView: View {
                 .padding(.top, 30)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    WatchRingView()
+                    WatchRingView(isShowContentView: $isShowContentView)
                         .padding(.horizontal, 30)
                         .padding(.bottom, 30)
                         .onTapGesture {
@@ -151,6 +151,8 @@ let sectionData = [
 ]
 
 struct WatchRingView: View {
+    @Binding var isShowContentView: Bool
+    
     var body: some View {
         HStack(spacing: 30.0) {
             HStack(spacing: 12.0) {
@@ -169,6 +171,9 @@ struct WatchRingView: View {
             .background(Color.white)
             .cornerRadius(20)
             .modifier(ShadowModifier())
+            .onTapGesture {
+                self.isShowContentView = true
+            }
             
             HStack(spacing: 12.0) {
                 RingView(color1: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), color2: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), width: 32, height: 32, percent: 90, isShow: .constant(true))

@@ -159,14 +159,14 @@ struct CourseView: View {
                     self.activeView = .zero
                 } : nil
             )
-                .onTapGesture {
-                    self.isShow.toggle()
-                    self.isActive.toggle()
-                    if self.isShow {
-                        self.activeIndex = self.index
-                    } else {
-                        self.activeIndex = -1
-                    }
+            .onTapGesture {
+                self.isShow.toggle()
+                self.isActive.toggle()
+                if self.isShow {
+                    self.activeIndex = self.index
+                } else {
+                    self.activeIndex = -1
+                }
             }
             
             // 将数据进行分离
@@ -179,7 +179,7 @@ struct CourseView: View {
         }
         .frame(height: isShow ? MAINSCREEN.height : 200)
         .scaleEffect(1 - self.activeView.height / 1000) // 0.9、0.8、0.6
-        .rotation3DEffect(Angle(degrees: Double(self.activeView.height / 10)), axis: (x: 0, y: 10.0, z: 0))
+        .rotation3DEffect(Angle(degrees: Double(self.activeView.height / 10)), axis: (x: -10, y: 0, z: 0))    // x:前后 y:左右 z:上下
         .hueRotation(Angle(degrees: Double(self.activeView.height)))    // 颜色变换
         .animation(.spring(response: 0.5, dampingFraction: 0.6))
         .edgesIgnoringSafeArea(.all)

@@ -4,7 +4,8 @@
 //
 //  Created by HuangSenhui on 2020/5/4.
 //  Copyright © 2020 H.Senhui. All rights reserved.
-//
+//  1. 卡片动画:
+//  通过isShowCard属性,控制背景的偏移、旋转、缩放、动画时间
 
 import SwiftUI
 
@@ -36,13 +37,13 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .shadow(radius: 20)
                 .offset(x: 0, y: isShowCard ? -400 : -40)
-                .offset(x: viewState.width, y: viewState.height)
+                .offset(x: viewState.width, y: viewState.height)    // 显示卡遍, 响应拖动手势
                 .offset(y: isShowBottomCard ? -180 : 0)
                 .scaleEffect(isShowBottomCard ? 1 : 0.9)
                 .rotationEffect(Angle(degrees: isShowCard ? 0 : 10))  // 旋转
                 .rotationEffect(Angle(degrees: isShowBottomCard ? -10 : 0))
                 .rotation3DEffect(Angle(degrees: isShowBottomCard ? 0 : 10), axis: (x: 10.0, y: 0.0, z: 0.0))  // 3D
-                .blendMode(.hardLight)
+                .blendMode(.hardLight) // 混合模式
                 .animation(.easeIn(duration: 0.5))
 
             BackCardView()
@@ -68,7 +69,7 @@ struct ContentView: View {
                 .shadow(radius: 20)
                 .offset(x: viewState.width, y: viewState.height)
                 .offset(y: isShowBottomCard ? -100 : 0)
-                .blendMode(.hardLight)
+                //.blendMode(.hardLight)
                 .animation(.spring(
                     response: 0.1,
                     dampingFraction: 0.6,
@@ -241,9 +242,9 @@ struct BottomCardView: View {
         }
         .padding(.top, 8)
         .padding(.horizontal, 20)
-            .frame(maxWidth: .infinity) // 与屏幕等宽
-            .background(Color.white)
-            .cornerRadius(30)
-            .shadow(radius: 20)
+        .frame(maxWidth: .infinity) // 与屏幕等宽
+        .background(Color.white)
+        .cornerRadius(30)
+        .shadow(radius: 20)
     }
 }

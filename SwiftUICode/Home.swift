@@ -17,9 +17,11 @@ struct Home: View {
     var body: some View {
         // 使用ZStack,将不同试图层叠组合，方便后续动画
         ZStack {
+            // 第一层
             Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
                 .edgesIgnoringSafeArea(.all)
             
+            // 第二层
             HomeView(isShowProfile: $isShowProfile, isShowContentView: $isShowContentView)
                 .padding(.top, 44)
                 .background(
@@ -34,8 +36,11 @@ struct Home: View {
                 .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
                 .offset(y: isShowProfile ? -450 : 0)
                 .rotation3DEffect(
-                    Angle(degrees: isShowProfile ? Double(viewState.height / 10) + 10 : 0),
-                    axis: (x: -10.0, y: 0, z: 0))
+                    Angle(
+                        degrees: isShowProfile ? -Double(viewState.height / 10) + 10 : 0),
+                        axis: (x: -10.0, y: 0, z: 0),
+                        anchor: .top    // 轴
+                )
                 .scaleEffect(isShowProfile ? 0.9 : 1)
                 .animation(.spring(
                     response: 0.5,
@@ -43,6 +48,7 @@ struct Home: View {
                     blendDuration: 0))
                 .edgesIgnoringSafeArea(.all)
             
+            // 第三层
             MenuView()
                 .background(Color.black.opacity(0.001))   // 用于添加手势
                 .offset(y: isShowProfile ? 0 : MAINSCREEN.height)
@@ -67,7 +73,8 @@ struct Home: View {
             // contentView
             if isShowContentView {
                 Color.white.edgesIgnoringSafeArea(.all) // 消除背景
-                ContentView()
+                
+                CourseList()
                 
                 HStack {
                     Spacer()
