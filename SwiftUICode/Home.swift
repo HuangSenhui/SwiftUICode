@@ -18,7 +18,7 @@ struct Home: View {
         // 使用ZStack,将不同试图层叠组合，方便后续动画
         ZStack {
             // 第一层
-            Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+            Color("background1")
                 .edgesIgnoringSafeArea(.all)
             
             // 第二层
@@ -26,11 +26,11 @@ struct Home: View {
                 .padding(.top, 44)
                 .background(
                     VStack {
-                        LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)), Color.white]), startPoint: .top, endPoint: .bottom)
+                        LinearGradient(gradient: Gradient(colors: [Color("background1"), Color("background1")]), startPoint: .top, endPoint: .bottom)
                             .frame(height: 200)
                         Spacer()
                     }
-                    .background(Color.white)
+                    .background(Color("background1"))
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
@@ -72,9 +72,9 @@ struct Home: View {
             
             // contentView
             if isShowContentView {
-                Color.white.edgesIgnoringSafeArea(.all) // 消除背景
+                BlurView(style: .systemMaterial).edgesIgnoringSafeArea(.all) // 消除背景
                 
-                CourseList()
+                ContentView()
                 
                 HStack {
                     Spacer()
@@ -102,7 +102,8 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home().environment(\.colorScheme, .dark)
+            .environment(\.sizeCategory, .extraLarge)
     }
 }
 

@@ -24,6 +24,10 @@
 		8B38CA6424615C9700548A61 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA6324615C9700548A61 /* Modifiers.swift */; };
 		8B38CA66246169C900548A61 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA65246169C900548A61 /* CourseList.swift */; };
 		8B38CA682461A62100548A61 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA672461A62100548A61 /* CourseDetail.swift */; };
+		8B38CA6A2461AC9E00548A61 /* WebData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA692461AC9E00548A61 /* WebData.swift */; };
+		8B38CA6C2461AEF500548A61 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA6B2461AEF500548A61 /* PostList.swift */; };
+		8B892F4A2467FBCD00A36EB7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B892F492467FBCD00A36EB7 /* DataStore.swift */; };
+		8B892F4C2468043E00A36EB7 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B892F4B2468043E00A36EB7 /* BlurView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		8B38CA6324615C9700548A61 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		8B38CA65246169C900548A61 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		8B38CA672461A62100548A61 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
+		8B38CA692461AC9E00548A61 /* WebData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebData.swift; sourceTree = "<group>"; };
+		8B38CA6B2461AEF500548A61 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
+		8B892F492467FBCD00A36EB7 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		8B892F4B2468043E00A36EB7 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,10 @@
 				8B38CA5F24614A5A00548A61 /* MainTabBar.swift */,
 				8B38CA612461507E00548A61 /* RingView.swift */,
 				8B38CA6324615C9700548A61 /* Modifiers.swift */,
+				8B892F4B2468043E00A36EB7 /* BlurView.swift */,
+				8B38CA692461AC9E00548A61 /* WebData.swift */,
+				8B38CA6B2461AEF500548A61 /* PostList.swift */,
+				8B892F492467FBCD00A36EB7 /* DataStore.swift */,
 				8B38CA44246065C000548A61 /* Assets.xcassets */,
 				8B38CA49246065C000548A61 /* LaunchScreen.storyboard */,
 				8B38CA4C246065C000548A61 /* Info.plist */,
@@ -183,8 +195,10 @@
 			files = (
 				8B38CA3F246065BD00548A61 /* AppDelegate.swift in Sources */,
 				8B38CA5E2461452500548A61 /* UpdateStore.swift in Sources */,
+				8B892F4A2467FBCD00A36EB7 /* DataStore.swift in Sources */,
 				8B38CA5A24613DB100548A61 /* UpdateList.swift in Sources */,
 				8B38CA542460EC6C00548A61 /* MenuView.swift in Sources */,
+				8B892F4C2468043E00A36EB7 /* BlurView.swift in Sources */,
 				8B38CA6424615C9700548A61 /* Modifiers.swift in Sources */,
 				8B38CA5C2461419700548A61 /* UpdateDetail.swift in Sources */,
 				8B38CA622461507E00548A61 /* RingView.swift in Sources */,
@@ -192,7 +206,9 @@
 				8B38CA58246102C900548A61 /* HomeView.swift in Sources */,
 				8B38CA41246065BD00548A61 /* SceneDelegate.swift in Sources */,
 				8B38CA6024614A5A00548A61 /* MainTabBar.swift in Sources */,
+				8B38CA6C2461AEF500548A61 /* PostList.swift in Sources */,
 				8B38CA682461A62100548A61 /* CourseDetail.swift in Sources */,
+				8B38CA6A2461AC9E00548A61 /* WebData.swift in Sources */,
 				8B38CA43246065BD00548A61 /* ContentView.swift in Sources */,
 				8B38CA66246169C900548A61 /* CourseList.swift in Sources */,
 			);

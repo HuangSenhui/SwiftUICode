@@ -186,6 +186,7 @@ struct TitleView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                 }
+                .padding(.leading)
                 Spacer()
             }
             Image("huoying_post1")
@@ -231,7 +232,7 @@ struct BottomCardView: View {
                     
                 }
                 .padding(20)
-                .background(Color.white)
+                .background(Color(.tertiarySystemBackground))
                 .cornerRadius(20)
                 .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
             }
@@ -243,7 +244,7 @@ struct BottomCardView: View {
         .padding(.top, 8)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity) // 与屏幕等宽
-        .background(Color.white)
+        .background(BlurView(style: .systemUltraThinMaterial))
         .cornerRadius(30)
         .shadow(radius: 20)
     }

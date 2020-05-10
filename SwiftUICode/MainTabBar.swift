@@ -21,11 +21,6 @@ struct MainTabBar: View {
                     Image(systemName: "book")
                     Text("章节")
             }
-            ContentView()
-                .tabItem {
-                    Image(systemName: "photo")
-                    Text("Content")
-            }
         }
 //        .padding(.top,44)
 //        .edgesIgnoringSafeArea(.top)

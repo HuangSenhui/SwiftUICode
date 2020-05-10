@@ -53,8 +53,8 @@ struct CourseDetail: View {
                         .frame(maxWidth: .infinity)
                         .frame(height: 140, alignment: .top)
                 }
-                .padding(isShow ? 30 : 20)
-                .padding(.top, isShow ? 30 : 20)
+                .padding(isShow ? 30 : 30)
+                .padding(.top, isShow ? 30 : 30)
                 .frame(maxWidth: isShow ? .infinity : MAINSCREEN.width - 60, maxHeight: isShow ? 460 : 200)
                 .background(Color(course.color))
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
@@ -73,6 +73,7 @@ struct CourseDetail: View {
                 .padding(30)
             }
         }
+        .background(Color(.systemBackground))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -80,5 +81,6 @@ struct CourseDetail: View {
 struct CourseDetail_Previews: PreviewProvider {
     static var previews: some View {
         CourseDetail(course: courseData[0], isShow: .constant(true),isActive: .constant(true), activeIndex: .constant(-1))
+            .environment(\.colorScheme, .dark)
     }
 }
