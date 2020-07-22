@@ -28,6 +28,7 @@
 		8B38CA6C2461AEF500548A61 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B38CA6B2461AEF500548A61 /* PostList.swift */; };
 		8B892F4A2467FBCD00A36EB7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B892F492467FBCD00A36EB7 /* DataStore.swift */; };
 		8B892F4C2468043E00A36EB7 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B892F4B2468043E00A36EB7 /* BlurView.swift */; };
+		8BBE936824C88AA300C00A33 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBE936724C88AA300C00A33 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		8B38CA6B2461AEF500548A61 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		8B892F492467FBCD00A36EB7 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		8B892F4B2468043E00A36EB7 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		8BBE936724C88AA300C00A33 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				8B38CA692461AC9E00548A61 /* WebData.swift */,
 				8B38CA6B2461AEF500548A61 /* PostList.swift */,
 				8B892F492467FBCD00A36EB7 /* DataStore.swift */,
+				8BBE936724C88AA300C00A33 /* Buttons.swift */,
 				8B38CA44246065C000548A61 /* Assets.xcassets */,
 				8B38CA49246065C000548A61 /* LaunchScreen.storyboard */,
 				8B38CA4C246065C000548A61 /* Info.plist */,
@@ -209,6 +212,7 @@
 				8B38CA6C2461AEF500548A61 /* PostList.swift in Sources */,
 				8B38CA682461A62100548A61 /* CourseDetail.swift in Sources */,
 				8B38CA6A2461AC9E00548A61 /* WebData.swift in Sources */,
+				8BBE936824C88AA300C00A33 /* Buttons.swift in Sources */,
 				8B38CA43246065BD00548A61 /* ContentView.swift in Sources */,
 				8B38CA66246169C900548A61 /* CourseList.swift in Sources */,
 			);
